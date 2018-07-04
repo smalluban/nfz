@@ -1,0 +1,32 @@
+{
+  "name": "NFZ",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "electron-webpack dev",
+    "compile": "electron-webpack",
+    "dist": "rm -rf ./dist && yarn compile && electron-builder",
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "hybrids": "^1.1.4",
+    "query-string": "^6.1.0",
+    "request": "^2.87.0",
+    "request-promise": "^4.2.2",
+    "source-map-support": "^0.5.5",
+    "xlsx": "^0.13.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.0.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "electron": "2.0.0",
+    "electron-builder": "^20.11.1",
+    "electron-webpack": "^2.0.1",
+    "webpack": "^4.8.1"
+  },
+  "resolutions": {
+    "webpack-sources": "1.0.1"
+  }
+}
