@@ -1,6 +1,7 @@
 import { html, property } from 'hybrids';
 import run from '../nfz';
 import generateXLS from '../nfz/xls';
+import { version } from '../../package.json';
 
 function logger(host) {
   return (msg) => {
@@ -73,6 +74,7 @@ export default {
       </div>
     `}
     ${!loading && html`<button onclick="${submit}" disabled="${!product}">Pobierz</button>`}
+    <footer>Wersja: ${version}</footer>
 
     <style>
       :host {
@@ -155,6 +157,12 @@ export default {
       p {
         font-size: 13px;
         color: gray;
+      }
+
+      footer {
+        padding: 0 10px 10px;
+        font-size: 11px;
+        text-align: right;
       }
     </style>
   `,

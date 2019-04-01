@@ -1,6 +1,6 @@
 {
   "name": "NFZ",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "scripts": {
     "dev": "electron-webpack dev",
@@ -28,5 +28,20 @@
   },
   "resolutions": {
     "webpack-sources": "1.0.1"
+  }, 
+  "build": {
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "createDesktopShortcut": "always"
+    }
   }
 }
