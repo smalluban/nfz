@@ -3,7 +3,7 @@ import queryString from 'query-string';
 import { API_URL } from './consts';
 
 const DEFAULT_OPTIONS = {
-  ROK: '2018',
+  ROK: '',
   OW: '01',
   ServiceType: '',
   Code: '',
@@ -18,8 +18,8 @@ const DEFAULT_OPTIONS = {
 
 const DEFAULT_REQ_OPTIONS = {
   agent: false,
-  pool: { maxSockets: 200 },
-  timeout: 120 * 1000, // ms
+  pool: { maxSockets: 400 },
+  timeout: 240 * 1000, // ms
 };
 
 export function getSearchResult(options = {}) {

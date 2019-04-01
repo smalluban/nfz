@@ -1,4 +1,5 @@
 import { define } from 'hybrids';
+
 import NfzApp from './nfz-app';
 
 import './style.css';
