@@ -66,7 +66,7 @@ export default async function run(Product, year, log, updateProgress) {
         updateProgress(count / keys.length * 100);
         return data;
       })),
-  ).then((allData => allData.reduce((data, acc) => acc.concat(data), [])));
+  ).then((allData => allData.reduce((acc, data) => acc.concat(data), [])));
 
   return result;
 }
