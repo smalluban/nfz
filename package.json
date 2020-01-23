@@ -1,11 +1,12 @@
 {
   "name": "NFZ",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "scripts": {
     "dev": "electron-webpack dev",
     "compile": "electron-webpack",
     "dist": "rm -rf ./dist && npm run compile && electron-builder",
+    "dist:win": "npm run dist -- --win nsis",
     "dist:dir": "npm run dist --dir -c.compression=store -c.mac.identity=null"
   },
   "dependencies": {
@@ -18,23 +19,26 @@
     "xlsx": "^0.13.1"
   },
   "devDependencies": {
+    "electron": "2.0.0",
+    "electron-builder": "^22.2.0",
+    "electron-webpack": "^2.0.1",
     "eslint": "^5.0.1",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
-    "electron": "2.0.0",
-    "electron-builder": "^20.11.1",
-    "electron-webpack": "^2.0.1",
+    "fsevents": "^1.2.11",
     "webpack": "^4.8.1"
   },
   "resolutions": {
     "webpack-sources": "1.0.1"
-  }, 
+  },
   "build": {
     "win": {
       "target": [
         {
           "target": "nsis",
-          "arch": ["x64"]
+          "arch": [
+            "x64"
+          ]
         }
       ],
       "icon": "icon.png"

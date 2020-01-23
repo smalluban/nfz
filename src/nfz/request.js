@@ -18,15 +18,18 @@ const DEFAULT_OPTIONS = {
 
 const DEFAULT_REQ_OPTIONS = {
   agent: false,
-  pool: { maxSockets: 400 },
-  timeout: 240 * 1000, // ms
+  forever: true,
+  timeout: 300 * 1000, // ms
 };
 
 export function getSearchResult(options = {}) {
   const query = Object.assign({}, DEFAULT_OPTIONS, options);
   const url = `${API_URL}/umowy/Provider/Index?${queryString.stringify(query)}`;
 
-  return rp(Object.assign({}, DEFAULT_REQ_OPTIONS, { url }));
+  return rp(Object.assign({}, DEFAULT_REQ_OPTIONS, { url })).catch((e) => {
+    console.error(url);
+    throw e;
+  });
 }
 
 export function getProviderResult(relativeURL) {

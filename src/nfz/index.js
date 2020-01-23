@@ -55,18 +55,16 @@ export async function search(Product, ROK, OW, page = 1, log) {
 }
 
 export default async function run(Product, year, log, updateProgress) {
-  let result = [];
   const keys = Object.keys(OW_LIST).sort();
   let count = 1;
+  const allData = [];
 
-  result = await Promise.all(
-    keys.map(key => search(Product, year, key, 1, log)
-      .then((data) => {
-        count += 1;
-        updateProgress(count / keys.length * 100);
-        return data;
-      })),
-  ).then((allData => allData.reduce((acc, data) => acc.concat(data), [])));
+  for (const key of keys) {
+    const data = await search(Product, year, key, 1, log);
+    count += 1;
+    updateProgress(count / keys.length * 100);
+    allData.push(data);
+  }
 
-  return result;
+  return allData.reduce((acc, data) => acc.concat(data), []);
 }
