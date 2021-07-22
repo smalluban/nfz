@@ -16,7 +16,7 @@
     "request": "^2.87.0",
     "request-promise": "^4.2.2",
     "source-map-support": "^0.5.5",
-    "xlsx": "^0.13.1"
+    "xlsx": "^0.17.0"
   },
   "devDependencies": {
     "electron": "2.0.0",
