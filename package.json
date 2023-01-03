@@ -21,7 +21,7 @@
   "devDependencies": {
     "electron": "2.0.0",
     "electron-builder": "^22.2.0",
-    "electron-webpack": "^2.0.1",
+    "electron-webpack": "^2.8.2",
     "eslint": "^5.0.1",
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
